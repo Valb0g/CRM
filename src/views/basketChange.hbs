@@ -1,0 +1,16 @@
+<h1> Редактирования заказа клиента {{user.name}} </h1>
+<form action="/clients/basket/change/{{order.id}}" id="changeFormBasket" data-divid="{{order.id}}" method="PUT"
+  name="orderUpdate">
+  <input type="number" name="orderNumber" value="{{order.orderNumber}}" placeholder="номер заказа">
+  <input type="text" name="type" value="{{order.type}}" placeholder="тип мебели">
+  <input type="number" name="price" value="{{order.price}}" placeholder="стоимость мебели">
+  <input type="text" name="comments" value="{{order.comments}}"placeholder="комментарии к заказу">
+  <input type="number" name="deliveryDate" value="{{order.deliveryDate}}" placeholder="дата доставки">
+  <input type="number" name="setupDate" value="{{order.setupDate}}" placeholder="дата сборки">
+  <input type="text" name="courierTeam" value="{{order.courierTeam}}" placeholder="бригада доставки">
+  <input type="text" name="setupTeam" value="{{order.setupTeam}}" placeholder="бригада сборки">
+  <input type="text" name="status" value="{{order.status}}" placeholder="статус">
+
+
+  <button type="submit">Сохранить изменения</button>
+</form>

@@ -1,0 +1,37 @@
+<div data-admin class="container my-5">
+  <h1 class='container d-flex justify-content-center my-30'>Список клиентов</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">ФИО</th>
+        <th scope="col">Адрес</th>
+        <th scope="col">Комментарии</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <button data-divid="{{this.id}}" onclick="window.location.href = '/clients/new'" type="click" 
+       style="margin: 20px" class='btn btn-outline-success btn-sm '>Создать клиента</button> 
+       {{#each allClient}}
+      <div class="clientDiv" data-divid="{{this.id}}">
+
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td><a href="/clients/{{this.id}}">{{this.name}}</a></td>
+        <td>{{this.adress}}</td>
+        <td>{{this.comments}}</td>
+        <td>
+          <button data-divid="{{this.id}}" onclick="window.location.href = '/clients/change/{{this.id}}';"
+            type="click" class='btn btn-outline-primary btn-sm'>Изменить</button> 
+           
+        </td>
+        <td><button data-divid="{{this.id}}" type="click" class='btn btn-outline-danger btn-sm btnDeleteClient'>Удалить</button></td>
+      </tr>
+        
+      </div>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
